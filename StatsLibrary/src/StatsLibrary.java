@@ -125,6 +125,43 @@ public class StatsLibrary
         }
     }
 	
+	//Probability Axioms
+	//True if axiom holds and false if it does not
+	
+	//Axiom 1: P(A) >= 0
+	public boolean axiom_1 (double a) {
+		if (a <= 0) {
+			return false;
+		}
+		return true;
+	}
+	
+	//Axiom 2: P(S) = 1
+	public boolean axiom_2 (ArrayList<Double> probabilities) {
+		int p = probabilities.size();
+		int S = 0;
+		for(int i=0; i<p; i++) {
+			S +=  probabilities.get(i);
+		}
+		if(S > 1 || S < 1) {
+			return false;
+		}
+		return true;
+	}
+	
+	//Axiom 3: 
+	public boolean axiom_3 (ArrayList<Double> probabilities) {
+		int p = probabilities.size();
+		int S = 0;
+		for(int i=0; i<p; i++) {
+			S +=  probabilities.get(i);
+		}
+		if(S > 1) {
+			return false;
+		}
+		return true;
+	}
+	
 	public double combination (int n, int r) {
 		return fact(n)/(fact(r)*fact(n-r));
 	}
